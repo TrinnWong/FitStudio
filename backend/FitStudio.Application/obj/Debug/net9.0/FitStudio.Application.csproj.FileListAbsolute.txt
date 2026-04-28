@@ -1,0 +1,15 @@
+C:\Users\danw7\source\repos\FitStudio\backend\FitStudio.Application\bin\Debug\net9.0\FitStudio.Application.deps.json
+C:\Users\danw7\source\repos\FitStudio\backend\FitStudio.Application\bin\Debug\net9.0\FitStudio.Application.dll
+C:\Users\danw7\source\repos\FitStudio\backend\FitStudio.Application\bin\Debug\net9.0\FitStudio.Application.pdb
+C:\Users\danw7\source\repos\FitStudio\backend\FitStudio.Application\bin\Debug\net9.0\FitStudio.Domain.dll
+C:\Users\danw7\source\repos\FitStudio\backend\FitStudio.Application\bin\Debug\net9.0\FitStudio.Domain.pdb
+C:\Users\danw7\source\repos\FitStudio\backend\FitStudio.Application\obj\Debug\net9.0\FitStudio.Application.csproj.AssemblyReference.cache
+C:\Users\danw7\source\repos\FitStudio\backend\FitStudio.Application\obj\Debug\net9.0\FitStudio.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\danw7\source\repos\FitStudio\backend\FitStudio.Application\obj\Debug\net9.0\FitStudio.Application.AssemblyInfoInputs.cache
+C:\Users\danw7\source\repos\FitStudio\backend\FitStudio.Application\obj\Debug\net9.0\FitStudio.Application.AssemblyInfo.cs
+C:\Users\danw7\source\repos\FitStudio\backend\FitStudio.Application\obj\Debug\net9.0\FitStudio.Application.csproj.CoreCompileInputs.cache
+C:\Users\danw7\source\repos\FitStudio\backend\FitStudio.Application\obj\Debug\net9.0\FitStudi.1CD42984.Up2Date
+C:\Users\danw7\source\repos\FitStudio\backend\FitStudio.Application\obj\Debug\net9.0\FitStudio.Application.dll
+C:\Users\danw7\source\repos\FitStudio\backend\FitStudio.Application\obj\Debug\net9.0\refint\FitStudio.Application.dll
+C:\Users\danw7\source\repos\FitStudio\backend\FitStudio.Application\obj\Debug\net9.0\FitStudio.Application.pdb
+C:\Users\danw7\source\repos\FitStudio\backend\FitStudio.Application\obj\Debug\net9.0\ref\FitStudio.Application.dll

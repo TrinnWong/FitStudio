@@ -1,0 +1,9 @@
+BACKEND
+cd backend
+cd FitStudio.Api
+
+-- Ejecutar migracion en desarrollo
+set ASPNETCORE_ENVIRONMENT=Development    
+dotnet ef database update
+
+

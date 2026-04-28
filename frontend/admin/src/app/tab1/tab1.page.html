@@ -1,0 +1,64 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Studio Dashboard</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="ion-padding">
+    <h1 style="font-weight: 800; font-size: 2.5rem; margin-bottom: 2rem;">Welcome, <span style="color: var(--ion-color-primary);">Admin</span></h1>
+
+    <div class="dashboard-grid">
+      <div class="glass-card ion-padding stats-card">
+        <ion-text color="medium">Total Members</ion-text>
+        <h2>1,284</h2>
+        <div class="trend positive">+12% this month</div>
+      </div>
+
+      <div class="glass-card ion-padding stats-card">
+        <ion-text color="medium">Revenue</ion-text>
+        <h2>$12,450</h2>
+        <div class="trend positive">+5.2%</div>
+      </div>
+
+      <div class="glass-card ion-padding stats-card">
+        <ion-text color="medium">Classes Today</ion-text>
+        <h2>8</h2>
+        <div class="trend">Next: Pilates @ 4PM</div>
+      </div>
+    </div>
+
+    <h3 style="margin-top: 2rem;">Recent Bookings</h3>
+    <ion-list lines="none" style="background: transparent;">
+      <ion-item class="glass-card" style="margin-bottom: 10px;">
+        <ion-avatar slot="start">
+          <img src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+        </ion-avatar>
+        <ion-label>
+          <h2>John Doe</h2>
+          <p>Jump Fitness - 10:00 AM</p>
+        </ion-label>
+        <ion-badge color="success" slot="end">Paid</ion-badge>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>
+
+<style>
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+}
+.stats-card h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 10px 0;
+}
+.trend {
+  font-size: 0.8rem;
+}
+.trend.positive {
+  color: var(--ion-color-secondary);
+}
+</style>
