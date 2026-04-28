@@ -15,8 +15,12 @@ namespace FitStudio.Application.Mappings
                 .ForMember(dest => dest.Status, opt => opt.MapFrom(src => src.Status.ToString()));
             
             CreateMap<RegisterClientRequest, Client>()
-                .ForMember(dest => dest.PasswordHash, opt => opt.Ignore()) // Handled by service
-                .ForMember(dest => dest.EncryptedUsername, opt => opt.Ignore()); // Handled by service
+                .ForMember(dest => dest.PasswordHash, opt => opt.Ignore())
+                .ForMember(dest => dest.EncryptedUsername, opt => opt.Ignore());
+
+            CreateMap<GymClass, GymClassDto>().ReverseMap();
+            CreateMap<CreateGymClassRequest, GymClass>();
+            CreateMap<UpdateGymClassRequest, GymClass>();
         }
     }
 }

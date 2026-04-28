@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
+import { GymClassesPage } from '../pages/gym-classes/gym-classes.page';
+import { GymClassFormPage } from '../pages/gym-classes/gym-class-form.page';
 
 const routes: Routes = [
   {
-    path: 'tabs',
+    path: '',
     component: TabsPage,
     children: [
       {
@@ -20,8 +22,20 @@ const routes: Routes = [
         loadChildren: () => import('../tab3/tab3.module').then(m => m.Tab3PageModule)
       },
       {
+        path: 'gym-classes',
+        component: GymClassesPage
+      },
+      {
+        path: 'gym-classes/new',
+        component: GymClassFormPage
+      },
+      {
+        path: 'gym-classes/edit/:id',
+        component: GymClassFormPage
+      },
+      {
         path: '',
-        redirectTo: '/tabs/tab1',
+        redirectTo: '/tabs/gym-classes',
         pathMatch: 'full'
       }
     ]

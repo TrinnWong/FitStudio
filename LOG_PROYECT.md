@@ -40,3 +40,14 @@ Este documento registra el historial de cambios y evolución del proyecto FitStu
   - *Solución*: Se ajustó la configuración en `FitStudioDbContext` estableciendo `DeleteBehavior.Restrict` para la relación entre `Booking` y `Schedule`.
 - **Advertencias de Truncamiento**: Se resolvieron advertencias de validación de EF Core definiendo explícitamente el tipo de columna `decimal(18,2)` para las propiedades monetarias `Membership.Price` y `Payment.Amount`.
 - Se generó la migración inicial (`20260427235756_InitialCreate`) aplicando exitosamente este nuevo diseño a la base de datos de desarrollo mediante `dotnet ef database update`.
+- **Implementación de Flujo de Registro y Verificación**:
+  - Creación de `Register` y `VerifyCode` en `AuthService` y `AuthController`.
+  - Integración con **OneSignal** mediante `NotificationService` para envío de códigos por email.
+  - Implementación de la entidad `VerificationCode` para persistencia de OTPs en base de datos.
+  - Ajuste en la lógica de registro para permitir nombres de estudios duplicados pero mantener emails de usuario únicos.
+  - Aplicación de migraciones `AddVerificationCodes` y `RemoveUniqueStudioSlug`.
+- **Mejoras en API y Frontend**:
+  - Configuración de políticas de **CORS** en el backend para permitir peticiones desde el frontend Ionic.
+  - Implementación de páginas de Login, Registro, Verificación y Términos en el portal Admin con diseño premium.
+  - Corrección de ruteo anidado en el sistema de navegación por pestañas (tabs).
+  - Configuración de logs detallados en el frontend para seguimiento del proceso de autenticación.

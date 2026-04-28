@@ -35,3 +35,30 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import "@ionic/angular/css/palettes/dark.system.css";
+
+.premium-alert {
+  --background: #ffffff;
+  --header-color: #1e3a8a;
+  --message-color: #4b5563;
+
+  .alert-wrapper {
+    border-radius: 16px !important;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
+  }
+
+  .alert-title {
+    font-weight: 700 !important;
+    font-size: 1.25rem !important;
+  }
+
+  .alert-message {
+    font-size: 1rem !important;
+    line-height: 1.5 !important;
+  }
+
+  .alert-button {
+    color: #3b82f6 !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+  }
+}

@@ -12,5 +12,6 @@ namespace FitStudio.Domain.Entities
         public virtual ICollection<Client> Clients { get; set; } = new List<Client>();
         public virtual ICollection<Schedule> Schedules { get; set; } = new List<Schedule>();
         public virtual ICollection<Membership> Memberships { get; set; } = new List<Membership>();
+        public virtual ICollection<GymClass> GymClasses { get; set; } = new List<GymClass>();
     }
 }

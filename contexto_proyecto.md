@@ -20,6 +20,7 @@ El sistema está diseñado de forma multi-tenant, donde múltiples estudios comp
 - **Schedule**: Horarios programados para clases específicas (ej. "Clase de Pilates a las 7:00 AM"). Tienen capacidad máxima y asientos disponibles.
 - **Booking**: Representa la reserva de un cliente para una clase específica (`Schedule`).
 - **Payment**: Registro de transacciones de pagos realizadas por los clientes al adquirir membresías.
+- **VerificationCode**: Almacena códigos OTP temporales y datos de registro pendientes para validación por email.
 
 ## Stack Tecnológico y Dependencias Clave
 - **Framework**: .NET 9.0 (ASP.NET Core Web API)

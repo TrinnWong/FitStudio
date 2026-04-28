@@ -102,6 +102,44 @@ namespace FitStudio.Infrastructure.Migrations
                     b.ToTable("Clients");
                 });
 
+            modelBuilder.Entity("FitStudio.Domain.Entities.GymClass", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("ClassType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImageUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("StudioId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("StudioId");
+
+                    b.ToTable("GymClasses");
+                });
+
             modelBuilder.Entity("FitStudio.Domain.Entities.Membership", b =>
                 {
                     b.Property<Guid>("Id")
@@ -195,15 +233,14 @@ namespace FitStudio.Infrastructure.Migrations
                     b.Property<int>("Capacity")
                         .HasColumnType("int");
 
-                    b.Property<string>("ClassName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<DateTime>("EndTime")
                         .HasColumnType("datetime2");
+
+                    b.Property<Guid>("GymClassId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("StartTime")
                         .HasColumnType("datetime2");
@@ -215,6 +252,8 @@ namespace FitStudio.Infrastructure.Migrations
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("GymClassId");
 
                     b.HasIndex("StudioId");
 
@@ -247,8 +286,7 @@ namespace FitStudio.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Slug")
-                        .IsUnique();
+                    b.HasIndex("Slug");
 
                     b.ToTable("Studios");
                 });
@@ -287,6 +325,41 @@ namespace FitStudio.Infrastructure.Migrations
                     b.ToTable("Users");
                 });
 
+            modelBuilder.Entity("FitStudio.Domain.Entities.VerificationCode", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Code")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("DataJson")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("ExpiryDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsUsed")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("VerificationCodes");
+                });
+
             modelBuilder.Entity("FitStudio.Domain.Entities.Booking", b =>
                 {
                     b.HasOne("FitStudio.Domain.Entities.Client", "Client")
@@ -310,6 +383,17 @@ namespace FitStudio.Infrastructure.Migrations
                 {
                     b.HasOne("FitStudio.Domain.Entities.Studio", "Studio")
                         .WithMany("Clients")
+                        .HasForeignKey("StudioId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Studio");
+                });
+
+            modelBuilder.Entity("FitStudio.Domain.Entities.GymClass", b =>
+                {
+                    b.HasOne("FitStudio.Domain.Entities.Studio", "Studio")
+                        .WithMany("GymClasses")
                         .HasForeignKey("StudioId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -347,11 +431,19 @@ namespace FitStudio.Infrastructure.Migrations
 
             modelBuilder.Entity("FitStudio.Domain.Entities.Schedule", b =>
                 {
+                    b.HasOne("FitStudio.Domain.Entities.GymClass", "GymClass")
+                        .WithMany("Schedules")
+                        .HasForeignKey("GymClassId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
                     b.HasOne("FitStudio.Domain.Entities.Studio", "Studio")
                         .WithMany("Schedules")
                         .HasForeignKey("StudioId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("GymClass");
 
                     b.Navigation("Studio");
                 });
@@ -374,6 +466,11 @@ namespace FitStudio.Infrastructure.Migrations
                     b.Navigation("Payments");
                 });
 
+            modelBuilder.Entity("FitStudio.Domain.Entities.GymClass", b =>
+                {
+                    b.Navigation("Schedules");
+                });
+
             modelBuilder.Entity("FitStudio.Domain.Entities.Schedule", b =>
                 {
                     b.Navigation("Bookings");
@@ -382,6 +479,8 @@ namespace FitStudio.Infrastructure.Migrations
             modelBuilder.Entity("FitStudio.Domain.Entities.Studio", b =>
                 {
                     b.Navigation("Clients");
+
+                    b.Navigation("GymClasses");
 
                     b.Navigation("Memberships");
 

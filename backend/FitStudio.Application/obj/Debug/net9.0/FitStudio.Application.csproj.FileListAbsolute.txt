@@ -13,3 +13,4 @@ C:\Users\danw7\source\repos\FitStudio\backend\FitStudio.Application\obj\Debug\ne
 C:\Users\danw7\source\repos\FitStudio\backend\FitStudio.Application\obj\Debug\net9.0\refint\FitStudio.Application.dll
 C:\Users\danw7\source\repos\FitStudio\backend\FitStudio.Application\obj\Debug\net9.0\FitStudio.Application.pdb
 C:\Users\danw7\source\repos\FitStudio\backend\FitStudio.Application\obj\Debug\net9.0\ref\FitStudio.Application.dll
+C:\Users\danw7\source\repos\FitStudio\backend\FitStudio.Application\obj\Debug\net9.0\FitStudio.Application.sourcelink.json

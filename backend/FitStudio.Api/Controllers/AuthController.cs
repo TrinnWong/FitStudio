@@ -50,5 +50,33 @@ namespace FitStudio.Api.Controllers
             var result = await _authService.ForgotPasswordAsync(email);
             return Ok(new { success = result });
         }
+
+        [HttpPost("register")]
+        public async Task<IActionResult> Register([FromBody] RegisterRequest request)
+        {
+            try
+            {
+                var result = await _authService.RegisterAsync(request);
+                return Ok(new { success = result });
+            }
+            catch (System.Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+        }
+
+        [HttpPost("verify-code")]
+        public async Task<IActionResult> VerifyCode([FromBody] VerifyRegisterRequest request)
+        {
+            try
+            {
+                var response = await _authService.VerifyCodeAsync(request);
+                return Ok(response);
+            }
+            catch (System.Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+        }
     }
 }

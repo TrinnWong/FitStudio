@@ -1,1 +1,126 @@
+.admin-menu {
+  --width: 260px;
+  border-right: 1px solid #f0f0f0;
 
+  ion-content {
+    --background: white;
+  }
+}
+
+.menu-header {
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+
+  .logo { width: 32px; height: 32px; }
+  .logo-text { font-size: 1.4rem; font-weight: bold; color: #1a1a1a; }
+}
+
+.menu-item {
+  --padding-start: 1.5rem;
+  --min-height: 44px;
+  --color: #666;
+  font-size: 0.95rem;
+  margin: 2px 0;
+  
+  ion-icon { font-size: 1.4rem; color: #888; }
+  
+  &.parent-item { cursor: pointer; }
+  
+  &:hover { --background: #f8f9fa; }
+  
+  &.activated, &.router-link-active {
+    --color: #007bff;
+    --background: #f0f7ff;
+    font-weight: 600;
+    ion-icon { color: #007bff; }
+  }
+}
+
+.submenu {
+  background: #fafafa;
+  padding-left: 1rem;
+  
+  .submenu-item {
+    --padding-start: 1rem;
+    --min-height: 40px;
+    font-size: 0.9rem;
+    --color: #777;
+    
+    ion-icon { font-size: 1.2rem; }
+  }
+}
+
+.menu-footer {
+  margin-top: 2rem;
+  padding: 1rem 1.5rem;
+  
+  .section-title {
+    font-size: 0.75rem;
+    color: #999;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+  }
+  
+  .menu-item.small {
+    --min-height: 36px;
+    font-size: 0.85rem;
+  }
+}
+
+/* Header Toolbar Styles */
+ion-toolbar {
+  --background: white;
+  --padding-end: 1rem;
+  --padding-start: 0.5rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.btn-top {
+  --padding-start: 1rem;
+  --padding-end: 1rem;
+  --border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-right: 0.5rem;
+  height: 36px;
+
+  ion-icon { font-size: 1.1rem; }
+  
+  &.primary { --background: #5a57e6; --color: white; }
+  &.secondary { --background: #f0f2f5; --color: #444; }
+  &:hover { opacity: 0.8; }
+}
+
+.user-avatar {
+  width: 36px;
+  height: 36px;
+  background: #5a57e6;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 0.9rem;
+  cursor: pointer;
+  margin-left: 0.5rem;
+}
+
+.user-popover {
+  --width: 200px;
+  --border-radius: 12px;
+  
+  ion-content {
+    --background: #ffffff;
+  }
+  
+  ion-item {
+    --padding-start: 1rem;
+    --min-height: 48px;
+    font-weight: 500;
+  }
+}

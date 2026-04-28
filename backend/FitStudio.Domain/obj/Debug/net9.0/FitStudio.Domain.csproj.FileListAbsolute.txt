@@ -10,3 +10,4 @@ C:\Users\danw7\source\repos\FitStudio\backend\FitStudio.Domain\obj\Debug\net9.0\
 C:\Users\danw7\source\repos\FitStudio\backend\FitStudio.Domain\obj\Debug\net9.0\refint\FitStudio.Domain.dll
 C:\Users\danw7\source\repos\FitStudio\backend\FitStudio.Domain\obj\Debug\net9.0\FitStudio.Domain.pdb
 C:\Users\danw7\source\repos\FitStudio\backend\FitStudio.Domain\obj\Debug\net9.0\ref\FitStudio.Domain.dll
+C:\Users\danw7\source\repos\FitStudio\backend\FitStudio.Domain\obj\Debug\net9.0\FitStudio.Domain.sourcelink.json

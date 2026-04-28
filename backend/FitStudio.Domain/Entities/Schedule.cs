@@ -5,7 +5,9 @@ namespace FitStudio.Domain.Entities
 {
     public class Schedule : BaseEntity
     {
-        public string ClassName { get; set; } = string.Empty; // Jump, Pilates, Yoga
+        public Guid GymClassId { get; set; }
+        public virtual GymClass GymClass { get; set; } = null!;
+        
         public DateTime StartTime { get; set; }
         public DateTime EndTime { get; set; }
         public int Capacity { get; set; }

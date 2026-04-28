@@ -17,3 +17,4 @@ C:\Users\danw7\source\repos\FitStudio\backend\FitStudio.Infrastructure\obj\Debug
 C:\Users\danw7\source\repos\FitStudio\backend\FitStudio.Infrastructure\obj\Debug\net9.0\FitStudio.Infrastructure.pdb
 C:\Users\danw7\source\repos\FitStudio\backend\FitStudio.Infrastructure\obj\Debug\net9.0\FitStudio.Infrastructure.genruntimeconfig.cache
 C:\Users\danw7\source\repos\FitStudio\backend\FitStudio.Infrastructure\obj\Debug\net9.0\ref\FitStudio.Infrastructure.dll
+C:\Users\danw7\source\repos\FitStudio\backend\FitStudio.Infrastructure\obj\Debug\net9.0\FitStudio.Infrastructure.sourcelink.json
